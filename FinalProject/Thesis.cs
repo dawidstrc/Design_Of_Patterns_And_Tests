@@ -4,6 +4,13 @@ using System.Text;
 
 namespace FinalProject
 {
+    public class ThesisException : ApplicationException
+    {
+        public ThesisException(string message)
+            : base(message)
+        {
+        }
+    }
     public class Thesis: Subject
     {
         public static List<Thesis> thesisList = new List<Thesis>();
@@ -134,6 +141,20 @@ namespace FinalProject
                 }
             }
             return "Brak Przypisanego Recenzenta";
+        }
+        
+
+        public string CheckingGrades(double promoterEvaluation, double reviewersAssessment)
+        {
+
+            if (promoterEvaluation < 3.0 || reviewersAssessment < 3.0)
+                throw new ThesisException("Nie zdales");
+            else if (promoterEvaluation == reviewersAssessment)
+                return "Oceny od Promotora i Recenzenta sa takie same";
+            else if (promoterEvaluation > reviewersAssessment)
+                return "Ocena Promotora jest wieksza od oceny Recenzenta";
+            else
+                return "Ocena Recenzenta jest wieksza od oceny Promotora";
         }
 
         protected override void Notify()

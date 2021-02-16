@@ -71,6 +71,7 @@ namespace FinalProject
             Thesis1.ReviewersAssessment = 3.0;
             Thesis1.Status = ThesisStatus.ReviewAndEvaluation;
             Console.WriteLine("\nOcena Promotora");
+            Thesis1.PromoterEvaluation = 3.0;
             Thesis1.Status = ThesisStatus.EvaluationOfThePromoter;
 
             Console.ReadKey();

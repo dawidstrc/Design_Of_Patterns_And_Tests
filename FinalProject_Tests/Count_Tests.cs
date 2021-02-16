@@ -3,7 +3,7 @@ using FinalProject;
 namespace FinalProject_Tests
 {
     [TestClass]
-    public class Tests
+    public class Count_Tests
     {
         [TestMethod]
         public void StudentCount()
