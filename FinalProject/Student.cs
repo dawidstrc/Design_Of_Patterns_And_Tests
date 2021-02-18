@@ -4,15 +4,17 @@ using System.Text;
 
 namespace FinalProject
 {
-    public class Student : IObserver
+    public class Student : IObserver, ICommand
     {
+        private Verification _verification;
         public static List<Student> studentsList = new List<Student>();
         public string _name { get; set; }
         public string _surname { get; set; }
         public int _albumnumber { get; set; }
         public string _email { get; set; }
-        public Student(string name, string surname, int albumnumber, string email)
+        public Student(Verification verification, string name, string surname, int albumnumber, string email)
         {
+            _verification = verification;
             this._name = name;
             this._surname = surname;
             this._albumnumber = albumnumber;
@@ -27,6 +29,9 @@ namespace FinalProject
             Console.WriteLine("Status Pracy: {0}", status);
         }
 
-
+        public void Execute()
+        {
+            _verification.Album_Number_Verification(_albumnumber, _name, _surname);
+        }
     }
 }

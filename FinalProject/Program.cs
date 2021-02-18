@@ -6,17 +6,45 @@ namespace FinalProject
     {
         static void Main(string[] args)
         {
+            //Create a validation class
+
+            var verification = new Verification();
+
             //Creating students
 
-            Student DawidStracilo = new Student("Dawid", "Stracilo", 111111, "dawids@gmail.com");
-            Student SebastianGacek = new Student("Sebastian", "Gacek", 222222, "sebastiang@gmail.com");
-            Student JanMaciag = new Student("Jan", "Maciag", 333333, "janm@gmail.com");
-            Student JakubNowak = new Student("Jakub", "Nowak", 444444, "jakubn@gmail.com");
+            Student DawidStracilo = new Student(verification, "Dawid", "Stracilo", 111111, "dawids@gmail.com");
+            Student SebastianGacek = new Student(verification, "Sebastian", "Gacek", 222222, "sebastiang@gmail.com");
+            Student JanMaciag = new Student(verification, "Jan", "Maciag", 333333, "janm@gmail.com");
+            Student JakubNowak = new Student(verification, "Jakub", "Nowak", 444444, "jakubn@gmail.com");
+            Student AdamKowalski = new Student(verification, "Adam", "Kowalski", 1234567, "adamk@gmail.com");
+            Student EwaZieba = new Student(verification, "Ewa", "Zieba", 87654321, "ewaz@gmail.com");
+
 
             Student.studentsList.Add(DawidStracilo);
             Student.studentsList.Add(SebastianGacek);
             Student.studentsList.Add(JanMaciag);
             Student.studentsList.Add(JakubNowak);
+            Student.studentsList.Add(AdamKowalski);
+            Student.studentsList.Add(EwaZieba);
+
+            //Console.WriteLine("{0}",Student.studentsList.Count);
+
+            //Creating an administrator and verifying album numbers
+
+            var administrator = new Administrator();
+
+            administrator.Add(DawidStracilo);
+            administrator.Add(SebastianGacek);
+            administrator.Add(JanMaciag);
+            administrator.Add(JakubNowak);
+            administrator.Add(AdamKowalski);
+            administrator.Add(EwaZieba);
+
+            Console.WriteLine("Weryfikacja studentow \n");
+            administrator.ExecuteAll();
+
+            //Console.WriteLine("{0}", Student.studentsList.Count);
+
 
             //Creating promoters
 

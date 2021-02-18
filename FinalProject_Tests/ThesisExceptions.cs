@@ -11,7 +11,8 @@ namespace FinalProject_Tests
         {
 
             //arrange
-            Student DawidStracilo = new Student("Dawid", "Stracilo", 111111, "dawids@gmail.com");
+            var verification = new Verification();
+            Student DawidStracilo = new Student(verification, "Dawid", "Stracilo", 111111, "dawids@gmail.com");
             Promoter Prom1 = new Promoter(1, "Adam", "Kowalski");
             Reviewer Rev1 = new Reviewer(1, "Ewelina", "Szlachta");
             Thesis Thesis1 = new Thesis(1, "PracaDyplomowa1", DawidStracilo, Prom1, Rev1);

@@ -8,8 +8,9 @@ namespace FinalProject_Tests
         [TestMethod]
         public void StudentCount()
         {
-            Student DawidStracilo = new Student("Dawid", "Stracilo", 111111, "dawid@gmail.com");
-            Student SebastianGacek = new Student("Sebastian", "Gacek", 222222, "sebastiang@gmail.com");
+            var verification = new Verification();
+            Student DawidStracilo = new Student(verification, "Dawid", "Stracilo", 111111, "dawid@gmail.com");
+            Student SebastianGacek = new Student(verification, "Sebastian", "Gacek", 222222, "sebastiang@gmail.com");
             Student.studentsList.Add(DawidStracilo);
             Student.studentsList.Add(SebastianGacek);
             int actual = Student.studentsList.Count;
